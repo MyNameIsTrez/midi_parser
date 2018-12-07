@@ -18,7 +18,8 @@ for (i in names) {
   for (track of midiArray.track) { // for every track
     for (event of track.event) { // for every event
       if (event.type === 9) { // if the event type is 'Note On'
-        time = event.deltaTime / 10; // sleep between pitches
+        time = event.deltaTime / 17; // sleep between pitches
+        // the instrument to play
         pitch = Math.round(event.data[0] / (127 / 24)); // pitch 0-127 map to 0-24
         if (time > 0) { // play pitches at the same time
           line++; // next tone
